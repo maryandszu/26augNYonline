@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>✿ 瑪莉酥酥 ✿ AUGUST ― 紐約連線</title>
+<meta property="og:title" content="✿ 瑪莉酥酥 ✿ AUGUST ― 紐約連線">
+<meta property="og:description" content="點任一張卡片即可前往 Facebook 社團該商品的下單貼文">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Klee+One:wght@600&family=Rubik+Bubbles&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EAF4FB;
+    --paper2:#F5FAFD;
+    --header-blue:#5FA6DE;
+    --header-blue-deep:#2E76B0;
+    --ink:#2E4358;
+    --ink-soft:#6485A0;
+    --blue:#8FCBEA;
+    --blue-deep:#2D7DB0;
+    --lilac:#9AA8E8;
+    --lilac-deep:#5B6FCB;
+    --navy:#7FA6CE;
+    --navy-deep:#28517E;
+    --sky:#6FC0E8;
+    --sky-deep:#1E88C2;
+    --card:#FFFFFF;
+    --line:#D7EAF7;
+    --center:#FFF3C4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background-color:#FBFEFF;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='78' height='300'%3E%3Crect width='78' height='300' fill='%23FBFEFF'/%3E%3Cpath d='M39 0 Q47 75 39 150 Q31 225 39 300' stroke='%23BBDFF3' stroke-width='34' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size:78px 300px;
+    background-repeat:repeat;
+    color:var(--ink);
+    font-family:"Noto Sans TC", sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{ padding:30px 22px 40px; text-align:center; position:relative; background:var(--header-blue); }
+  .wave{
+    height:22px; width:100%; margin-top:-1px;
+    background-color: var(--paper);
+    background-image: radial-gradient(circle at 11px 0, var(--header-blue) 11px, transparent 12px);
+    background-size: 22px 22px;
+    background-repeat: repeat-x;
+    background-position: -5px 0;
+  }
+  .brand-name{
+    font-family:"Rubik Bubbles", "Zen Maru Gothic", sans-serif;
+    font-weight:400; font-size:22px; white-space:nowrap;
+    color:#FFFFFF; margin:2px 0 14px; letter-spacing:0.02em;
+    text-shadow:0 2px 0 rgba(40,90,130,0.25);
+  }
+  header .eyebrow{
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-weight:900; font-size:15px; letter-spacing:0.02em;
+    color:var(--header-blue-deep); display:inline-block;
+    padding:7px 18px; border:1.5px dashed #FFFFFF;
+    border-radius:20px; background:var(--paper2);
+  }
+  .sub-eyebrow{
+    font-family:"Zen Maru Gothic", sans-serif;
+    font-weight:700; font-size:13.5px; letter-spacing:0.02em;
+    color:#F5FBFF; margin:12px 0 0;
+  }
+  .wrap{ max-width:520px; margin:0 auto; padding:22px 16px 60px; }
+  .section-title{ display:flex; align-items:center; gap:10px; margin:36px 4px 14px; }
+  .section-title .badge{
+    font-family:"Zen Maru Gothic", sans-serif; font-weight:700; font-size:12px;
+    color:#fff; padding:5px 12px; border-radius:5px; letter-spacing:0.04em;
+  }
+  .badge.ua{ background:var(--lilac-deep); }
+  .badge.us{ background:var(--sky-deep); }
+  .badge.nj{ background:var(--navy-deep); }
+  .section-title h2{ font-family:"Zen Maru Gothic", sans-serif; font-size:15px; font-weight:700; margin:0; color:var(--ink); }
+  .section-title .line{ flex:1; height:1px; background:var(--line); }
+  ul.list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+  a.card{
+    display:flex; gap:14px; background:var(--card); border:1px solid var(--line);
+    border-left-width:6px; border-radius:8px; padding:12px; text-decoration:none; color:inherit; position:relative;
+    box-shadow:0 4px 0 rgba(45,125,176,0.07); transition:transform .12s ease, box-shadow .12s ease;
+  }
+  ul.list.ua a.card{ border-left-color:var(--lilac-deep); }
+  ul.list.us a.card{ border-left-color:var(--sky-deep); }
+  ul.list.nj a.card{ border-left-color:var(--navy-deep); }
+  a.card:active{ transform:scale(0.98); box-shadow:0 1px 0 rgba(45,125,176,0.07); }
+  .thumb{ width:128px; height:128px; flex:none; border-radius:6px; overflow:hidden; background:#EAF4FB; display:flex; align-items:center; justify-content:center; position:relative; }
+  .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .thumb.placeholder{ background:linear-gradient(135deg, var(--c1), var(--c2)); }
+  .thumb.placeholder svg.flower-icon{ width:46px; height:46px; }
+  .thumb.placeholder .soon{
+    position:absolute; left:0; right:0; bottom:6px; text-align:center;
+    font-family:"Zen Maru Gothic", sans-serif; font-size:9.5px; font-weight:700;
+    color:rgba(255,255,255,0.9); letter-spacing:0.03em;
+  }
+  ul.list.ua .thumb.placeholder{ --c1:#B4BFF0; --c2:#5B6FCB; }
+  ul.list.us .thumb.placeholder{ --c1:#A7DEF5; --c2:#1E88C2; }
+  ul.list.nj .thumb.placeholder{ --c1:#AFC9E4; --c2:#28517E; }
+  .info{ flex:1; min-width:0; display:flex; flex-direction:column; justify-content:center; gap:6px; }
+  .code-tag{
+    align-self:flex-start; font-family:"Zen Maru Gothic", sans-serif; font-size:10.5px; font-weight:700;
+    letter-spacing:0.04em; color:#FFFFFF; background:#EA6FA3; padding:2px 8px; border-radius:4px;
+    border:1px solid #EA6FA3;
+  }
+  .name{ font-size:14.5px; font-weight:500; line-height:1.4; color:var(--ink); overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+  .cta{ display:flex; align-items:center; gap:4px; font-size:12px; color:var(--sky-deep); font-weight:700; }
+  .cta svg{ width:13px; height:13px; flex:none; }
+  footer{ text-align:center; padding:0 20px 50px; font-size:12px; color:#7C9AB3; }
+  footer .heart{ color:var(--sky-deep); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand-name">MARY &amp; SZU SELECT SHOP</div>
+  <span class="eyebrow">✿ 瑪莉酥酥 ✿ AUGUST ― 紐約連線</span>
+  <p class="sub-eyebrow">點任一張卡片即可前往 Facebook 社團該商品的下單貼文</p>
+</header>
+<div class="wave"></div>
+
+<div class="wrap">
+
+  <div class="section-title"><span class="badge ua">UA</span><h2>美妝保養折扣好物</h2><span class="line"></span></div>
+  <ul class="list ua">
+    <li><a class="card" href="https://reurl.cc/yWL9bE" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/UA801.jpg" alt="EVE LOM全能深層潔淨霜"></div>
+      <div class="info"><span class="code-tag">UA801</span><div class="name">EVE LOM全能深層潔淨霜</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/p83ejx" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/UA802.jpg" alt="LOCCITANE歐舒丹玫瑰系列"></div>
+      <div class="info"><span class="code-tag">UA802</span><div class="name">LOCCITANE歐舒丹玫瑰系列</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/AXjvej" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/UA803.jpg" alt="Aveda髮品折扣專區"></div>
+      <div class="info"><span class="code-tag">UA803</span><div class="name">Aveda髮品折扣專區</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/p83e0a" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/UA804.jpg" alt="CPB肌膚之鑰折扣好物"></div>
+      <div class="info"><span class="code-tag">UA804</span><div class="name">CPB肌膚之鑰折扣好物</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+  </ul>
+
+  <div class="section-title"><span class="badge us">US</span><h2>美國嚴選好物</h2><span class="line"></span></div>
+  <ul class="list us">
+    <li><a class="card" href="https://reurl.cc/4Yr9q2" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US801.jpg" alt="美國好市多限定Owala SmoothSip隨行杯2入組"></div>
+      <div class="info"><span class="code-tag">US801</span><div class="name">美國好市多限定Owala SmoothSip隨行杯2入組</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/WzxKZe" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US802.jpg" alt="美國版Move Free益節加強型75錠"></div>
+      <div class="info"><span class="code-tag">US802</span><div class="name">美國版Move Free益節加強型75錠</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/nxNGd1" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US803.jpg" alt="美國Nature's Bounty 頭髮/指甲/皮膚強化草莓維他命軟糖"></div>
+      <div class="info"><span class="code-tag">US803</span><div class="name">美國Nature's Bounty 頭髮/指甲/皮膚強化草莓維他命軟糖</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/gNG5Qz" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US804.jpg" alt="OWALA 兒童隨行防漏水杯"></div>
+      <div class="info"><span class="code-tag">US804</span><div class="name">OWALA 兒童隨行防漏水杯</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/Wzx9qO" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US805.jpg" alt="OWALA FreeSip 替換杯蓋"></div>
+      <div class="info"><span class="code-tag">US805</span><div class="name">OWALA FreeSip 替換杯蓋</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/MWOEXK" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US806.jpg" alt="OWALA 直飲式保冰水壺FREESIP KIDS [16oz/473ml]"></div>
+      <div class="info"><span class="code-tag">US806</span><div class="name">OWALA 直飲式保冰水壺FREESIP KIDS [16oz/473ml]</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/vGaN7e" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US807.jpg" alt="OWALA直飲式保冰水壺 FREESIP中款 [24oz/710ml]"></div>
+      <div class="info"><span class="code-tag">US807</span><div class="name">OWALA直飲式保冰水壺 FREESIP中款 [24oz/710ml]</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/6Xvz5d" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US808.jpg" alt="OWALA 直飲式保冰水壺 FREESIP大款 [32oz/945ml] / [40oz/1180ml]"></div>
+      <div class="info"><span class="code-tag">US808</span><div class="name">OWALA 直飲式保冰水壺 FREESIP大款 [32oz/945ml] / [40oz/1180ml]</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/OQMWv3" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US809.jpg" alt="OWALA FREESIP SWAY提把直飲式保冰水壺"></div>
+      <div class="info"><span class="code-tag">US809</span><div class="name">OWALA FREESIP SWAY提把直飲式保冰水壺</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/RRqMy6" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US810.jpg" alt="美國Beats Studio Pro頭戴式耳機"></div>
+      <div class="info"><span class="code-tag">US810</span><div class="name">美國Beats Studio Pro頭戴式耳機</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/rk9W6k" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US811.jpg" alt="Trader Joe's 經典刺繡帆布袋"></div>
+      <div class="info"><span class="code-tag">US811</span><div class="name">Trader Joe's 經典刺繡帆布袋</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/3yXVe0" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/US812.jpg" alt="Trader Joe's 罐裝捲心酥"></div>
+      <div class="info"><span class="code-tag">US812</span><div class="name">Trader Joe's 罐裝捲心酥</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+  </ul>
+
+  <div class="section-title"><span class="badge nj">NJ</span><h2>美國Outlets挖挖寶</h2><span class="line"></span></div>
+  <ul class="list nj">
+    <li><a class="card" href="https://reurl.cc/RRqMW6" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/NJ801.jpg" alt="Calvin Klein 細肩三角襯墊運動內衣"></div>
+      <div class="info"><span class="code-tag">NJ801</span><div class="name">Calvin Klein 細肩三角襯墊運動內衣</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/Z8ex9l" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/NJ802.jpg" alt="Calvin Klein 襯墊集中提托型運動內衣"></div>
+      <div class="info"><span class="code-tag">NJ802</span><div class="name">Calvin Klein 襯墊集中提托型運動內衣</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/NOlay5" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/NJ803.jpg" alt="Calvin Klein 字樣肩帶集中款內衣"></div>
+      <div class="info"><span class="code-tag">NJ803</span><div class="name">Calvin Klein 字樣肩帶集中款內衣</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/VnMaN6" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/NJ804.jpg" alt="Calvin Klein 薄墊背心式運動內衣"></div>
+      <div class="info"><span class="code-tag">NJ804</span><div class="name">Calvin Klein 薄墊背心式運動內衣</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/NOlaym" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/NJ805.jpg" alt="Calvin Klein寬頭棉質內褲"></div>
+      <div class="info"><span class="code-tag">NJ805</span><div class="name">Calvin Klein寬頭棉質內褲</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/KEl63e" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/NJ806.jpg" alt="The North Face尼龍防潑水托特袋"></div>
+      <div class="info"><span class="code-tag">NJ806</span><div class="name">The North Face尼龍防潑水托特袋</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+    <li><a class="card" href="https://reurl.cc/EY67bA" target="_blank" rel="noopener">
+      <div class="thumb"><img src="images/NJ807.jpg" alt="Nike 24.7PerfectStretch女款排汗彈力全拉鍊外套"></div>
+      <div class="info"><span class="code-tag">NJ807</span><div class="name">Nike 24.7PerfectStretch女款排汗彈力全拉鍊外套</div><div class="cta">前往下單貼文<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    </a></li>
+  </ul>
+
+</div>
+
+<footer>祝購物愉快 <span class="heart">❤</span></footer>
+
+</body>
+</html>
